@@ -12,6 +12,7 @@ router.post('/register', (req,res)=> {
 
     Users.add(user)
     .then(saved => {
+        //a jwt should be generated
         res.status(201).json(saved);
     })
     .catch(err => {
@@ -27,8 +28,9 @@ router.post('/login', (req,res)=>{
     .first()
     .then(user => {
         if (user && bcrypt.compareSync (password, user.password)){
+            
             const token = getToken(user)
-
+         //a jwt should be generated
             res.status(200).json({
                 message: `Welcome ${user.username}! ${token}`
                 
@@ -43,13 +45,14 @@ router.post('/login', (req,res)=>{
 
 })
 
- 
-
 function getToken(user){
+    // header payload and verify signature
+    // payload -> username, id, roles, exp date
+    // v signature -> a secret
+    
     const payload ={
-      subject: 'user',
-      username: user.username,
-      department:user.department
+      subject: user.id,
+      username: user.username
     };
     const secret = secrets.jwtSecret;
     const options = {

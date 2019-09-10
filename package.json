@@ -1,33 +1,25 @@
 {
-  "name": "knexfile",
+  "name": "auth-iii-challenge",
   "version": "1.0.0",
-  "description": "- Authentication.\r - Express Middleware.\r - JSON Web Tokens (JWTs).\r - Hashing Passwords.",
+  "description": "Auth III Module Challenge",
   "main": "index.js",
   "scripts": {
     "server": "nodemon",
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dragonbegin/webauth-iii-challenge.git"
-  },
-  "author": "me",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dragonbegin/webauth-iii-challenge/issues"
-  },
-  "homepage": "https://github.com/dragonbegin/webauth-iii-challenge#readme",
+  "keywords": [],
+  "author": "Lambda School",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
-    "helmet": "^3.21.0",
+    "helmet": "^3.19.0",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.19.4",
-    "node": "^12.10.0",
-    "nodemon": "^1.19.2",
-    "server": "^1.0.19",
-    "sqlite3": "^4.1.0"
+    "knex": "^0.19.1",
+    "sqlite3": "^4.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
