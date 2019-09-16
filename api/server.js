@@ -4,8 +4,6 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
- console.log(process.env.JWT_SECRET);
-
 
 const authRouter = require('../auth/auth-router.js');
 const usersRouter = require('../users/users-router.js');
